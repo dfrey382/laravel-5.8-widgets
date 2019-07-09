@@ -1,6 +1,6 @@
 <?php
 
-namespace Dsc\Widget;
+namespace Dsccore\Widget;
 
 use Closure;
 use Illuminate\Container\Container;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Dsc\Widget;
+namespace Dsccore\Widget;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
@@ -19,7 +19,7 @@ class WidgetServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['widget'] = $this->app->share(function ($app) {
+        $this->app['widget'] = $this->app->singleton('dbview', function ($app) {
             $blade = $app['view']->getEngineResolver()->resolve('blade')->getCompiler();
 
             return new Widget($blade, $app);
@@ -27,7 +27,7 @@ class WidgetServiceProvider extends ServiceProvider
 
         $this->app->booting(function () {
             $loader = AliasLoader::getInstance();
-            $loader->alias('Widget', 'Dsc\Widget\WidgetFacade');
+            $loader->alias('Widget', 'Dsccore\Widget\WidgetFacade');
 
             $file = app_path('widgets.php');
 
