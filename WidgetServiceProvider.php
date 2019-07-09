@@ -1,6 +1,6 @@
 <?php
 
-namespace Pingpong\Widget;
+namespace Dsc\Widget;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
@@ -27,7 +27,7 @@ class WidgetServiceProvider extends ServiceProvider
 
         $this->app->booting(function () {
             $loader = AliasLoader::getInstance();
-            $loader->alias('Widget', 'Pingpong\Widget\WidgetFacade');
+            $loader->alias('Widget', 'Dsc\Widget\WidgetFacade');
 
             $file = app_path('widgets.php');
 

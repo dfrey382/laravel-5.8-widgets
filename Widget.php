@@ -1,6 +1,6 @@
 <?php
 
-namespace Pingpong\Widget;
+namespace Dsc\Widget;
 
 use Closure;
 use Illuminate\Container\Container;
