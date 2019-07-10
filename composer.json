@@ -30,6 +30,16 @@
       "Dsccore\\Widget\\": ""
     }
   },
+  "extra": {
+    "laravel": {
+        "providers": [
+            "Dsccore\\Widget\\WidgetServiceProvider"
+        ],
+        "aliases": {
+          "Widget": "Dsccore\\Widget\\WidgetFacade"
+       }
+    }
+},
   "minimum-stability": "dev",
     "prefer-stable": true
 }
